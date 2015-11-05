@@ -265,11 +265,9 @@ System.register(['core-js', 'aurelia-task-queue', 'aurelia-dependency-injection'
       return obj[parseInt(key)];
     } else if (obj) {
       return obj[key];
-    } else if (obj === null) {
-      throw new Error('Accessing null object');
-    } else {
-      return obj[key];
-    }
+    } else if (obj === null) {} else {
+        return obj[key];
+      }
   }
 
   function setKeyed(obj, key, value) {

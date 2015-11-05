@@ -1889,7 +1889,8 @@ function getKeyed(obj, key) {
   } else if (obj) {
     return obj[key];
   } else if (obj === null) {
-    throw new Error('Accessing null object');
+    // This should not be a hard error
+    // throw new Error('Accessing null object');
   } else {
     return obj[key];
   }

@@ -3162,8 +3162,9 @@ export class OoObjectObserver {
   }
 
   unsubscribe(propertyName, callback) {
-    var callbacks = this.callbacks[propertyName],
-        index = callbacks.indexOf(callback);
+    var callbacks = this.callbacks[propertyName];
+     if (callbacks === null) return;
+     var index = callbacks.indexOf(callback);
     if (index === -1) {
       return;
     }
